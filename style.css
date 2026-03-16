@@ -213,3 +213,16 @@ body::after {
   color: #00ffe7;
   font-weight: 900;
 }
+/* hide duplicate digit layers */
+.bottom,
+.flip-top,
+.flip-bottom {
+  display: none !important;
+}
+
+/* show main number clearly */
+.top span {
+  font-size: 140px;
+  color: #00ffe7;
+  font-weight: 900;
+}
