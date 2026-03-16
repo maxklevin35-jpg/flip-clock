@@ -200,3 +200,16 @@ body::after {
   color: #00ffe7;
   display: block;
 }
+/* Show only one digit layer */
+.flip-card .bottom,
+.flip-card .flip-top,
+.flip-card .flip-bottom {
+  display: none;
+}
+
+/* Make the visible digit bigger */
+.flip-card .top span {
+  font-size: 140px;
+  color: #00ffe7;
+  font-weight: 900;
+}
