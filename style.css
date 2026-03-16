@@ -195,3 +195,8 @@ body::after {
   margin-bottom: 32px;
   text-shadow: 0 0 8px #ff00ff, 0 0 22px #ff00ff, 0 0 44px rgba(255,0,255,0.5);
 }
+.flip-card span {
+  font-size: 90px;
+  color: #00ffe7;
+  display: block;
+}
