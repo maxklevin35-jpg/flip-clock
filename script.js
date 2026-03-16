@@ -1,22 +1,23 @@
-function updateClock(){
+function updateClock() {
 
-let now = new Date()
+  const now = new Date();
 
-let hours = String(now.getHours()).padStart(2,"0")
-let minutes = String(now.getMinutes()).padStart(2,"0")
-let seconds = String(now.getSeconds()).padStart(2,"0")
+  const h = String(now.getHours()).padStart(2,"0");
+  const m = String(now.getMinutes()).padStart(2,"0");
+  const s = String(now.getSeconds()).padStart(2,"0");
 
-document.getElementById("hours-top").innerText = hours
-document.getElementById("hours-bottom").innerText = hours
+  const ids = [
+    ["hours-top",h],["hours-bottom",h],
+    ["minutes-top",m],["minutes-bottom",m],
+    ["seconds-top",s],["seconds-bottom",s]
+  ];
 
-document.getElementById("minutes-top").innerText = minutes
-document.getElementById("minutes-bottom").innerText = minutes
-
-document.getElementById("seconds-top").innerText = seconds
-document.getElementById("seconds-bottom").innerText = seconds
+  ids.forEach(([id,val])=>{
+    const el = document.getElementById(id);
+    if(el) el.textContent = val;
+  });
 
 }
 
-setInterval(updateClock,1000)
-
-updateClock()
+updateClock();
+setInterval(updateClock,1000);
