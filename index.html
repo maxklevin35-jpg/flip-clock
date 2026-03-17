@@ -1,42 +1,39 @@
 <body>
 
-  <h1 class="username">Naman Sharma </h1>
+  <h1 class="username">Naman Sharma</h1>
 
   <div class="clock">
-    <div class="segment" id="hours">
-      <div class="flip-card">
-        <div class="top"><span id="hours-top">00</span></div>
-        <div class="bottom"><span id="hours-bottom">00</span></div>
-        <div class="flip-top"><span id="hours-flip-top">00</span></div>
-        <div class="flip-bottom"><span id="hours-flip-bottom">00</span></div>
+
+    <div class="segment">
+      <div class="digit-wrap" id="hours-wrap">
+        <div class="digit" id="hours">00</div>
+        <div class="digit ghost" id="hours-ghost">00</div>
       </div>
       <label>Hours</label>
     </div>
 
     <div class="separator">:</div>
 
-    <div class="segment" id="minutes">
-      <div class="flip-card">
-        <div class="top"><span id="minutes-top">00</span></div>
-        <div class="bottom"><span id="minutes-bottom">00</span></div>
-        <div class="flip-top"><span id="minutes-flip-top">00</span></div>
-        <div class="flip-bottom"><span id="minutes-flip-bottom">00</span></div>
+    <div class="segment">
+      <div class="digit-wrap" id="minutes-wrap">
+        <div class="digit" id="minutes">00</div>
+        <div class="digit ghost" id="minutes-ghost">00</div>
       </div>
       <label>Minutes</label>
     </div>
 
     <div class="separator">:</div>
 
-    <div class="segment" id="seconds">
-      <div class="flip-card">
-        <div class="top"><span id="seconds-top">00</span></div>
-        <div class="bottom"><span id="seconds-bottom">00</span></div>
-        <div class="flip-top"><span id="seconds-flip-top">00</span></div>
-        <div class="flip-bottom"><span id="seconds-flip-bottom">00</span></div>
+    <div class="segment">
+      <div class="digit-wrap" id="seconds-wrap">
+        <div class="digit" id="seconds">00</div>
+        <div class="digit ghost" id="seconds-ghost">00</div>
       </div>
       <label>Seconds</label>
     </div>
+
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
+
 </body>
