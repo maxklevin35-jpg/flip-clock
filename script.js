@@ -1,23 +1,22 @@
-function updateSegment(unit, value) {
-  const top = document.getElementById(`${unit}-top`);
-  const bottom = document.getElementById(`${unit}-bottom`);
-  const flipTop = document.getElementById(`${unit}-flip-top`);
-  const flipBottom = document.getElementById(`${unit}-flip-bottom`);
+function updateUnit(unit, value) {
+  const current = document.getElementById(unit);
+  const ghost = document.getElementById(`${unit}-ghost`);
+  const wrap = document.getElementById(`${unit}-wrap`);
 
-  if (!top || !bottom || !flipTop || !flipBottom) return;
+  if (!current || !ghost || !wrap) return;
 
-  // Set current value
-  top.textContent = value;
-  bottom.textContent = value;
+  if (current.textContent === value) return;
 
-  // Prepare flip animation
-  flipTop.textContent = value;
-  flipBottom.textContent = value;
+  // old value goes to ghost
+  ghost.textContent = current.textContent;
 
-  // Trigger animation
-  flipTop.parentElement.classList.remove("animate");
-  void flipTop.offsetWidth; // force reflow
-  flipTop.parentElement.classList.add("animate");
+  // new value
+  current.textContent = value;
+
+  // restart animation
+  wrap.classList.remove("animating");
+  void wrap.offsetWidth;
+  wrap.classList.add("animating");
 }
 
 function updateClock() {
@@ -27,9 +26,9 @@ function updateClock() {
   const m = String(now.getMinutes()).padStart(2, "0");
   const s = String(now.getSeconds()).padStart(2, "0");
 
-  updateSegment("hours", h);
-  updateSegment("minutes", m);
-  updateSegment("seconds", s);
+  updateUnit("hours", h);
+  updateUnit("minutes", m);
+  updateUnit("seconds", s);
 }
 
 updateClock();
