@@ -1,39 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
-  <h1 class="username">Naman Sharma</h1>
-
   <div class="clock">
-
-    <div class="segment">
-      <div class="digit-wrap" id="hours-wrap">
-        <div class="digit" id="hours">00</div>
-        <div class="digit ghost" id="hours-ghost">00</div>
-      </div>
-      <label>Hours</label>
-    </div>
-
-    <div class="separator">:</div>
-
-    <div class="segment">
-      <div class="digit-wrap" id="minutes-wrap">
-        <div class="digit" id="minutes">00</div>
-        <div class="digit ghost" id="minutes-ghost">00</div>
-      </div>
-      <label>Minutes</label>
-    </div>
-
-    <div class="separator">:</div>
-
-    <div class="segment">
-      <div class="digit-wrap" id="seconds-wrap">
-        <div class="digit" id="seconds">00</div>
-        <div class="digit ghost" id="seconds-ghost">00</div>
-      </div>
-      <label>Seconds</label>
-    </div>
-
+    <span id="hours">00</span>
+    <span class="colon">:</span>
+    <span id="minutes">00</span>
+    <span class="colon">:</span>
+    <span id="seconds">00</span>
+    <span id="ampm" class="ampm">AM</span>
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 
 </body>
+</html>
