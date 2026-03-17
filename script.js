@@ -1,34 +1,34 @@
-function updateUnit(unit, value) {
-  const current = document.getElementById(unit);
-  const ghost = document.getElementById(`${unit}-ghost`);
-  const wrap = document.getElementById(`${unit}-wrap`);
+function animate(el, value) {
+  if (el.textContent === value) return;
 
-  if (!current || !ghost || !wrap) return;
+  el.classList.add("change");
 
-  if (current.textContent === value) return;
-
-  // old value goes to ghost
-  ghost.textContent = current.textContent;
-
-  // new value
-  current.textContent = value;
-
-  // restart animation
-  wrap.classList.remove("animating");
-  void wrap.offsetWidth;
-  wrap.classList.add("animating");
+  setTimeout(() => {
+    el.textContent = value;
+    el.classList.remove("change");
+  }, 150);
 }
 
 function updateClock() {
   const now = new Date();
 
-  const h = String(now.getHours()).padStart(2, "0");
-  const m = String(now.getMinutes()).padStart(2, "0");
-  const s = String(now.getSeconds()).padStart(2, "0");
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
 
-  updateUnit("hours", h);
-  updateUnit("minutes", m);
-  updateUnit("seconds", s);
+  let ampm = h >= 12 ? "PM" : "AM";
+
+  h = h % 12 || 12;
+
+  h = String(h).padStart(2, "0");
+  m = String(m).padStart(2, "0");
+  s = String(s).padStart(2, "0");
+
+  animate(document.getElementById("hours"), h);
+  animate(document.getElementById("minutes"), m);
+  animate(document.getElementById("seconds"), s);
+
+  document.getElementById("ampm").textContent = ampm;
 }
 
 updateClock();
